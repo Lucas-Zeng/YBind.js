@@ -1,4 +1,4 @@
-# YBind.js
+# ybind.js
 A tiny but strong javascript MVVM framework
 
 ### demo

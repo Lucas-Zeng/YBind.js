@@ -5,7 +5,7 @@ sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('default', function(){
-  return gulp.src('./src/YBind.js')
+  return gulp.src('./src/ybind.js')
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))

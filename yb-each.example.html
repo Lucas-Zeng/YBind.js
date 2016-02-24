@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>YBind example</title>
+	<title>ybind example</title>
 	<style>
 
 		div {
@@ -28,14 +28,14 @@
 	<section id="s1" yb-each="getDomInfo">Section 1</section>
 
 	<br/>
-	<span>try 'viewController.blurEvent = "whatever you want to output"' in console</span>
-	<script src="./dist/YBind.min.js"></script>
+	<span>try 'viewController.getDomInfo = "whatever you want to output"' in console</span>
+	<script src="./dist/ybind.min.js"></script>
 	<script>
 
 		var viewController = YBind({
 
 			getDomInfo: function( val ){
-
+				
 				return function( index ){
 
 					console.log( 'element ' + ++index + '## name: ' + this.nodeName + ' , id: ' + this.getAttribute( 'id' ) + ' , value: ' + ( this.value || this.textContent ) );
