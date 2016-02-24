@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YBind example</title>
+	<style>
+
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+
+		span {
+			font-size: 12px;
+			color: #999;
+		}
+
+	</style>
+</head>
+<body>
+
+	<input type="text" id="input1" value="jack" yb-each="getDomInfo">
+	<input type="text" id="input2" value="rose" yb-each="getDomInfo">
+	<input type="text" id="input3" value="mike" yb-each="getDomInfo">
+	<article id="a1" yb-each="getDomInfo">Article 1</article>
+	<section id="s1" yb-each="getDomInfo">Section 1</section>
+
+	<br/>
+	<span>try 'viewController.blurEvent = "whatever you want to output"' in console</span>
+	<script src="./dist/YBind.min.js"></script>
+	<script>
+
+		var viewController = YBind({
+
+			getDomInfo: function( val ){
+
+				return function( index ){
+
+					console.log( 'element ' + ++index + '## name: ' + this.nodeName + ' , id: ' + this.getAttribute( 'id' ) + ' , value: ' + ( this.value || this.textContent ) );
+
+				}
+
+			} 
+
+		});
+
+		//bind click
+		viewController.act( 'getDomInfo' );
+		// this equals to viewController.getDomInfo = xxx;  xxx could be anything, including empty string and undefined etc.
+		// since no val needs to be passed into getDomInfo, both way behave the same;
+
+
+		
+	</script>
+</body>
+</html>

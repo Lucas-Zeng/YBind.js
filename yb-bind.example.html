@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YBind example</title>
+	<style>
+		div span {
+			color: red;
+		}
+
+		.f12 {
+			font-size: 12px;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+
+	<section>
+		<div>Today is day <span yb-bind="dayCtr.day">1</span>.</div>
+		<div>I <span yb-bind="dayCtr.isWorkDay">do</span> need to work.</div>
+	</section>
+	<br>
+	<span class="f12">try 'viewController.dayCtr = 2' in console</span>
+
+	<script src="./dist/YBind.min.js"></script>
+	<script>
+
+		var viewController = YBind({
+
+			dayCtr: function ( val ) {
+
+				var isWorkDay  = +val <= 5 && +val >= 1, // assume people work form Monday to Friday
+
+					returnArr  = {
+
+						day: val,
+
+						isWorkDay: isWorkDay ? 'do' : 'don\'t',
+
+					}
+
+				return returnArr;
+
+			}	
+
+		});
+
+		//change view
+		viewController.dayCtr = 6;
+
+	</script>
+</body>
+</html>

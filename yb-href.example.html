@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YBind example</title>
+	<style>
+		div span {
+			color: red;
+		}
+
+		.f12 {
+			font-size: 12px;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+
+	<section>
+		<a href="javascript:;" yb-href="hrefCtl" yb-bind="hrefCtl"></a>
+	</section>
+	<br>
+	<span class="f12">try 'viewController.hrefCtl = 'https://github.com/Lucas-Zeng/YBind.js';' in console</span>
+
+	<script src="./dist/YBind.min.js"></script>
+	<script>
+
+		var viewController = YBind({
+
+			hrefCtl: function ( val ) {
+
+				return val;
+
+			}	
+			//hrefCtl: YBind.bind;
+			//the above expression also works if hrefCtl return the parameter without futhur logic.
+
+		});
+
+		//change view
+		viewController.hrefCtl = 'javascript:;';
+
+	</script>
+</body>
+</html>

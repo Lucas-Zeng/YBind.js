@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YBind example</title>
+	<style>
+
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+
+		span {
+			font-size: 12px;
+			color: #999;
+		}
+
+	</style>
+</head>
+<body>
+
+	<input type="text" yb-focus="focusEvent">
+	<br/>
+	<span>try 'viewController.focusEvent = "whatever you want to output"' in console</span>
+	<script src="./dist/YBind.min.js"></script>
+	<script>
+
+		var viewController = YBind({
+
+			focusEvent: function( val ){
+
+				return function(){
+
+					console.error( 'input: ' + this.value + ' ; PS: ' + val );
+
+				}
+
+			} 
+
+		});
+
+		//bind click
+		viewController.focusEvent = 'I am focused!!';
+		
+	</script>
+</body>
+</html>
