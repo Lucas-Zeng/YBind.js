@@ -1,5 +1,11 @@
-# ybind.js
-A tiny but strong javascript MVVM framework
+README
+===========================
+A tinny but strong MVVM framework.
+****
+###　　　　　　　　　　　　Author:Lucas-Zeng
+###　　　　　　　　　 E-mail:247934556@qq.com
+
+===========================
 
 ### demo
 #####yb-bind
