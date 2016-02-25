@@ -72,7 +72,7 @@
 
             if( key.indexOf( '__' ) == 0 ){
 
-              Array.prototype.forEach.call( document.querySelectorAll( '[yb-bind="' + key.substr(2) + '"]' ), function( elm, i ) {
+              Array.prototype.forEach.call( document.querySelectorAll( '[yb-bind="' + key.substr(2) + '"], [yb-bind^="' + key.substr(2) + '."]' ) , function( elm, i ) {
 
                 if( elm.nodeName.toLowerCase() == 'input' || elm.nodeName.toLowerCase() == 'textarea' ){
 
